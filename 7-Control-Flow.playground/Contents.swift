@@ -9,9 +9,9 @@ A simple `if` statment in Swift looks like the following:
 let isHuman = true
 
 if isHuman {
-    println("I'm a human")
+    print("I'm a human")
 } else {
-    println("Non human")
+    print("Non human")
 }
 
 //: Note that parentheses are optional for `if` statments in Swift.
@@ -28,7 +28,7 @@ There are two types of `for` loops in Swift. Apple explains the two as:
 let cities = ["New York", "Paris", "London", "Shanghai"]
 
 for city in cities {
-    println("I live in \(city)")
+    print("I live in \(city)")
 }
 
 /*:
@@ -38,7 +38,7 @@ We can also use a `for-in` with a range of numbers:
 */
 
 for index in 1...3 {
-    println("I can count to \(index)")
+    print("I can count to \(index)")
 }
 
 /*:
@@ -47,7 +47,7 @@ You can also define for loops in the following format:
 */
 
 for var index = 0; index < 3; index++ {
-    println("I can count to \(index)")
+    print("I can count to \(index)")
 }
 /*:
 This looks more like a standard Java for loop.
@@ -69,7 +69,7 @@ while result < 60 {
     result *= 5
 }
 
-println(result)
+print(result)
 
 /*:
 `result` will be updated as follows: 1, 5, 25, 50, 125. Notice that the loop ran 4 times, but it stopped once `result` became more than 60.
@@ -91,13 +91,13 @@ let grade = "A"
 
 switch grade {
 case "A":
-    println("Excellent grade")
+    print("Excellent grade")
 case "B":
-    println("Good grade")
+    print("Good grade")
 case "C":
-    println("Passing grade")
+    print("Passing grade")
 default:
-    println("Unknown grade")
+    print("Unknown grade")
 }
 /*:
 Two important things you should keep in mind when using `switch` in Swift:

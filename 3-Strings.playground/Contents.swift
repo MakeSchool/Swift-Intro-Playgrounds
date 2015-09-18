@@ -17,9 +17,9 @@ let greeting = "Hello, Make School!"
 let season = "summer"
 let salutation = "Have a nice " + season + "!"
 
-//: Also, if you want to join an array of strings together, you can use the `join` method of String to conjoin them with a delimiter of your choosing:
+//: Also, if you want to join an array of strings together, you can use the `joinWithSeparator` method of String to conjoin them with a delimiter of your choosing:
 
-let beetles = " and ".join(["John", "Paul", "Ringo", "George"])
+let beetles = (["John", "Paul", "Ringo", "George"].joinWithSeparator(" and "))
 
 //: You can go in the opposite direction, too, with a method borrowed from NSString:
 
@@ -52,7 +52,7 @@ let complexInterpolation = "The area of my circle is \(M_PI * radius * radius)"
 //: Sometimes things go wrong in our programs. Sometimes you just want to see how a value is changing as your program executes. When we aren't in the context of a Playground, we don't have the benefit of the side pane showing us these intermediate values. At times like these, we need a way to print to Xcode's debug console. We can do this with Swift's `println` function. It takes a String and writes it to the debug area so we can see what's going on.
 
 let answer = 42
-println("The answer is \(answer)")
+print("The answer is \(answer)")
 
 //: ### Indexing into Strings
 //:
@@ -64,16 +64,16 @@ let position = 2
 
 //: This is because characters in Swift Strings actually represent conceptual units called **extended grapheme clusters** that don't match one-to-one with the bytes used to encode the string. You don't need to worry about what a grapheme cluster is; what matters is that you can't use a plain old integer index.
 //:
-//: Instead, you need to use the `advance` function, which uses special knowledge about how Strings store characters to calculate a suitable index:
+//: Instead, you need to use the `advancedBy` method, which uses special knowledge about how Strings store characters to calculate a suitable index:
 
-let index = advance(barnResidents.startIndex, position)
+let index = barnResidents.startIndex.advancedBy(position)
 let realPig = barnResidents[index]
 
 //: ### Iterating Over Strings
 //: 
 //: We can use a `for` loop to get each Character in sequence from a String:
 
-for animal in barnResidents {
+for animal in barnResidents.characters {
     let statusReport = "\(animal) is in the barn."
 }
 

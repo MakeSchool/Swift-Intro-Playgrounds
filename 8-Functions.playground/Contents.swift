@@ -42,8 +42,8 @@ Sometimes, you want a function to return more than one value back. However, in m
 In this function, we send in an array of integers as input, and expect 2 values to be returned. Notice the syntax: for the returned value, we have 2 items, first and last. They have their types declared, and they are wrapped inside parentheses. Furthermore, in order to return a tuple, the function simply wraps the items it wants to return inside parantheses.
 */
 func firstLast(array: [Int]) -> (first: Int, last: Int) {
-    var firstItem = array[0]
-    var lastItem = array[array.count-1]
+    let firstItem = array[0]
+    let lastItem = array[array.count-1]
     return (firstItem, lastItem)
 }
 /*:
@@ -67,8 +67,8 @@ let val2 = result.0
 There is a totally different way to get back the values as well. You can define your own tuple items, and they will be bound to the values returned by the function. In the line below, item1 is bound to the value of the first item returned by the function. Note that they do not need to have their types defined. Why? because Swift is smart enough to realize that you are calling firstLast function which returns 2 integers, so as a programmer, you obviously wanted item1 and item2 to be integers as well. Cool, huh?
 */
 let (item1, item2) = firstLast(numbers)
-println(item1)
-println(item2)
+print(item1)
+print(item2)
 /*:
 All right, time to talk about an advanced topic: internal and external parameter names. Coming from another programming language, you probably have not heard about such a thing, but no worries, once you understand why it is needed, you will be using it everywhere in your code.
 */
@@ -95,7 +95,7 @@ func resize(width1: Int, height1: Int, width2: Int, height2: Int) {
 /*:
 Notice how this function is being called. The caller sends in 4 numbers, but it is confusing which number matches which parameter. This is how bugs are made! Imagine accidentally switching two of these numbers, and everything falls apart.
 */
-resize(20, 30, 100, 400)
+resize(20, height1: 30, width2: 100, height2: 400)
 /*:
 This is where external names come in handy. You can force the caller to use the external names when calling the function to make it easier for them to see which value matches which parameter. Look at this modified version:
 */
@@ -106,12 +106,7 @@ func resize2(fromWidth width1: Int, fromHeight height1: Int, toWidth width2: Int
 Look at how much more readable the line below is! If a programmer comes back later on to this code, she knows exactly what is happening. She does not have to go to look at the definition of the function to figure out what is happening on this line. Everything is explained right there in one line. It is obvious that the code is resizing (something) from width 20 to width 100 and from height 30 to height 400. This is all thanks to the power of internal/external parameter names!
 */
 resize2(fromWidth: 20, fromHeight: 30, toWidth: 100, toHeight: 400)
-/*:
-Sometimes, you might not even need to define 2 names for a parameter. You can use one name for both. All you have to do is add # to the beginning of the name to tell Swift that you want to use one name for both internal and external names:
-*/
-func resize3(#fromWidth: Int, #fromHeight: Int, #toWidth: Int, #toHeight: Int) {
-    
-}
+
 
 
 

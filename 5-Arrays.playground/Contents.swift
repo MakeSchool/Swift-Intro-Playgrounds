@@ -27,7 +27,7 @@ let emptyArray = [String]()
 In many cases, it is important to find out the number of items in your array. You can find the number of items easily by looking at the array's `count` property.
 */
 let numberOfItems = groceryList.count
-println("the grocery list contains \(numberOfItems) items.")
+print("the grocery list contains \(numberOfItems) items.")
 
 //: Notice that, just like Java's .length property, this is not a property, not a method.
 
@@ -35,9 +35,9 @@ println("the grocery list contains \(numberOfItems) items.")
 Sometimes you just want to know whether the array is empty or not:
 */
 if groceryList.isEmpty {
-    println("The grocery list is empty!")
+    print("The grocery list is empty!")
 } else {
-    println("The grocery list is not empty!")
+    print("The grocery list is not empty!")
 }
 
 /*:

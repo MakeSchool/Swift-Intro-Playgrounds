@@ -15,7 +15,7 @@ Just like arrays, the type of the dictionary can be inferred, so "[String : Stri
 
 To count the number of key-value pairs, you can use the count property just like arrays. "isEmpty" works as well.
 */
-println("The dictionary contains \(cities.count) items.")
+print("The dictionary contains \(cities.count) items.")
 
 /*:
 You can add a new key-value pair like this:
@@ -32,16 +32,16 @@ cities["San Francisco"] = "United States of America"
 When trying to retrieve a value for a key, there is a possibility that key-value pair does not exist, so you have to make sure you check for this case. As a result, it is best to use optional binding to retrieve a value from the dictionary:
 */
 if let country = cities["London"] {
-    println("London is in \(country).")
+    print("London is in \(country).")
 }
 else {
-    println("The dictionary does not contain London as a key.")
+    print("The dictionary does not contain London as a key.")
 }
 /*:
 You can remove a key-value pair simply by setting the key's value to nil:
 */
 cities["London"] = nil
-println(cities) //does not contain "London" anymore
+print(cities) //does not contain "London" anymore
 /*:
 To empty the dictionary:
 */
