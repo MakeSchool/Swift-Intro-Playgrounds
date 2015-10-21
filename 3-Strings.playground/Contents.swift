@@ -47,9 +47,9 @@ let farewell = "See you in the \(nextSeason)"
 let radius:Double = 3
 let complexInterpolation = "The area of my circle is \(M_PI * radius * radius)"
 
-//: ### Using `println` for Debugging
+//: ### Using `print` for Debugging
 //:
-//: Sometimes things go wrong in our programs. Sometimes you just want to see how a value is changing as your program executes. When we aren't in the context of a Playground, we don't have the benefit of the side pane showing us these intermediate values. At times like these, we need a way to print to Xcode's debug console. We can do this with Swift's `println` function. It takes a String and writes it to the debug area so we can see what's going on.
+//: Sometimes things go wrong in our programs. Sometimes you just want to see how a value is changing as your program executes. When we aren't in the context of a Playground, we don't have the benefit of the side pane showing us these intermediate values. At times like these, we need a way to print to Xcode's debug console. We can do this with Swift's `print` function. It takes a String and writes it to the debug area so we can see what's going on.
 
 let answer = 42
 print("The answer is \(answer)")
@@ -79,13 +79,13 @@ for animal in barnResidents.characters {
 
 //: ### `String` is a Value Type
 //: 
-//: In Swift, strings follow the semantics of **value types**. That means that when you assign a string value to a variable, or pass a string value to a function, the destination gets its own "copy" of the string. If the new string is then modified, these changes have no effect on the original string. This is in contrast to **reference types**, where changing
+//: In Swift, strings follow the semantics of **value types**. That means that when you assign a string value to a variable, or pass a string value to a function, the destination gets its own "copy" of the string. If the new string is then modified, these changes have no effect on the original string. This is in contrast to **reference types**, where all variables refer to the same instance of an object, so changing the value for one changes it for all references.
 //: 
 //: The reason I put "copy" in quotes above is that, really, strings only **appear** to be copied when they are assigned. Behind the scenes, Swift is clever enough not to create an all-new instance of the string immediately. Only when a string is changed does Swift allocate the new memory for storing the modified string.
-
+// After these lines executes, `tigersAndMoreBears` points to exactly the same memory as `tigersAndBears`:
 let tigersAndBears = "🐯🐯🐻🐻"
-// After this line executes, `tigersAndMoreBears` points to exactly the same memory as `tigersAndBears`:
 var tigersAndMoreBears = tigersAndBears
+
 // After this line executes, the two strings point to two distinct areas in memory:
 tigersAndMoreBears += "🐨🐨"
 
