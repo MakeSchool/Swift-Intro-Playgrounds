@@ -24,9 +24,9 @@ maybeAnInt = nil
 //: We can then safely use **force unwrapping** to get its value. Force unwrapping is done by putting an exclamation point (!) after the name of the variable we want to unwrap. This assures Swift that the optional contains a value and that it is therefore safe to read. Here, we test whether `maybeAnInt` has a value and if it does, we rip open the box (force unwrap) and print its value.
 
 if maybeAnInt != nil {
-    println("maybeAnInt contains a value, and it is \(maybeAnInt!)")
+    print("maybeAnInt contains a value, and it is \(maybeAnInt!)")
 } else {
-    println("maybeAnInt does not contain a value")
+    print("maybeAnInt does not contain a value")
 }
 
 //: Try changing the value of `maybeAnInt` from `nil` to something else above. Notice that the message only gets printed if it contains a value.
@@ -36,9 +36,9 @@ if maybeAnInt != nil {
 //: A more compact way of testing and acting on an optional value is **optional binding**, where we test for the presence of an object and, if it exists, we create a new variable for this object in a narrower scope. Here, we "bind" the value of `maybeAnInt` (if present) to a new constant named `definitelyAnInt`, which only exists inside the `if/else` block, and print it:
 
 if let definitelyAnInt = maybeAnInt {
-    println("maybeAnInt contains a value, and it is \(definitelyAnInt)")
+    print("maybeAnInt contains a value, and it is \(definitelyAnInt)")
 } else {
-    println("maybeAnInt does not contain a value")
+    print("maybeAnInt does not contain a value")
 }
 
 //: Try changing the value of `maybeAnInt` again, and again take note that if it contains a value, the message indicates this and the local variable `definitelyAnInt` has the same value. If it doesn't contain a value, then `definitelyAnInt` won't be created.
@@ -51,7 +51,7 @@ var alwaysAString: String! = nil
 
 //: Notice that we initially assign `nil` to this implicitly unwrapped optional `String`. If we were to try to use it at this point, we would trigger a runtime error:
 
-//let stringLength = count(alwaysAString)
+//let stringLength = alwaysAString.characters.count
 
 //: Try uncommenting the line above and seeing what happens. You will probably notice that the remainder of the Playground can no longer be evaluated. This is because the underlying process crashes when it attempts to access the variable. That's why we have to ensure that we never read an implicitly-unwrapped optional before setting its value.
 
@@ -61,7 +61,7 @@ alwaysAString = "Now I have a value!"
 
 //: Now, when we print this string, it is implicitly unwrapped to the `String` value it contains:
 
-println(alwaysAString)
+print(alwaysAString)
 
 //: The important takeaway here is that declaring a variable as implicitly unwrapped allows Swift to _automatically_ unwrap the value whenever it is used. This is the inverse of the usual situation: normally, we use the `!` to force-unwrap a value once we're sure it contains a value. With implicitly unwrapped optionals, we assert from the moment we declare the variable that it will _never_ be `nil` when it is used. That can save us a lot of typing (and visual clutter!) for variables that are accessed frequently.
 
