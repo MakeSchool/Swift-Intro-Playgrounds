@@ -48,7 +48,7 @@ Uncomment the line below to see what happens when you try to add an item to the 
 //groceryList.append("bread")
 
 /*:
-It says `Immutable value of type '[String]' only has mutating members named 'append'
+It says `Immutable value of type '[String]' only has mutating members named 'append'`
 As you can see, `.count` and `.isEmpty` work with immutable arrays without any problems. Let's now define a mutable array to see what features are available when working with mutable arrays:
 */
 var mutableGroceryList = ["eggs", "milk"]
