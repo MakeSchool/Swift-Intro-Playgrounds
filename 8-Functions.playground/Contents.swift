@@ -2,7 +2,7 @@ import UIKit
 
 /*:
 # Functions
-Programming is not powerful without functions. Functions are a block of code that perform a specific task. They are there to make code more organized, more readable, and more reusable. Let's dig in to see how it works!
+Programming is not powerful without functions. Functions are a block of code that perform a specific task. They exist to make code more organized, more readable, and more reusable. Let's dig in to see how it works!
 */
 /*:
 Here's how you declare a function with no parameters or return value.
@@ -106,14 +106,5 @@ func resize2(fromWidth width1: Int, fromHeight height1: Int, toWidth width2: Int
 Look at how much more readable the line below is! If a programmer comes back later on to this code, she knows exactly what is happening. She does not have to go to look at the definition of the function to figure out what is happening on this line. Everything is explained right there in one line. It is obvious that the code is resizing (something) from width 20 to width 100 and from height 30 to height 400. This is all thanks to the power of internal/external parameter names!
 */
 resize2(fromWidth: 20, fromHeight: 30, toWidth: 100, toHeight: 400)
-
-
-
-
-
-
-
-
-
 
 
