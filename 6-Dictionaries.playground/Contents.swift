@@ -13,7 +13,7 @@ var cities: [String :  String] = ["New York City" : "USA", "Paris" : "France", "
 As you can see, the type of a dictionary depends on the type of its key and the type of its value. The general dictionary type is defined as [<key type> : <value type>]. In the example above, the key and the value are both Strings. The key represents the name of the city, and the value represents the country the city is in.
 Just like arrays, the type of the dictionary can be inferred, so "[String : String]" is not necessary.
 
-To count the number of key-value pairs, you can use the count property just like arrays. "isEmpty" works as well.
+To count the number of key-value pairs, you can use the `count` property just like arrays. `isEmpty` works as well.
 */
 print("The dictionary contains \(cities.count) items.")
 
@@ -51,7 +51,7 @@ To define a new empty dictionary:
 */
 var dictionary = [String : Int]()
 /*:
-Notice how the type of the values is Int. The value type can be any type you want. The key can also be any type you want. However, the key has to be a type that provides a value for its hashValue property. This is out of the scope of this tutorial, and there are rarely any situations that you will need a custom type to be the key type for a dictionary.
+Notice how the type of the values is Int. The value type can be any type you want. The key can also be any type you want. However, the key has to be a type that provides a value for its `hashValue` property. This is out of the scope of this tutorial, and there are rarely any situations that you will need a custom type to be the key type for a dictionary.
 */
 
 
